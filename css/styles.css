@@ -1,3 +1,19 @@
 #pizza-display {
   display: none;
 }
+
+.jumbotron {
+  text-align: center;
+  background-color: white;
+  color: red;
+}
+
+body {
+  background-color: red;
+  color: white;
+}
+
+.btn {
+  background-color: yellow;
+  color: red;
+}

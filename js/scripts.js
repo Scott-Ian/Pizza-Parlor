@@ -34,7 +34,7 @@ Pizza.prototype.determinePrice = function () {
 
 function displayPizzaPrice (pizza) {
   $("#pizza-display").show();
-  $("ul#pizza-list").append(pizza.price);
+  $("#pizza-cost").text(pizza.price);
 }
 
 function attachContactListeners (pizza) {
