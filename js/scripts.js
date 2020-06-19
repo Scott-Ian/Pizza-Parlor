@@ -16,9 +16,13 @@
   }
 
   PizzaOrder.prototype.calculateOrderTotal = function () {
-    this.pizzas.forEach(pizza) {
-      PizzaOrder.orderTotal += this.price;
-    }
+    let total = 0;
+
+    this.pizzas.forEach(function (pizza) {
+      total += pizza.price;
+    });
+
+    this.orderTotal = total;
   }
 
 // Business logic for Pizza
@@ -57,17 +61,6 @@ Pizza.prototype.determinePrice = function () {
 
 
 // UI Logic
-function displayPizzaPrice (pizza) {
-  size, crust, toppings
-  $("#size").text(pizza.size);
-  $("#crust").text(pizza.crust);
-  const pizzaToppingsString = pizza.toppings.join(", ");
-  $("#toppings").text(pizzaToppingsString);
-  $("#pizza-cost").text(pizza.price);
-
-  $("#pizza-display").show();
-}
-
 function displayPizzaOrderDetails (pizzaOrder) {
   let pizzaList = $("pizza-list");
   let htmlForPizzaInfo = "";
@@ -102,12 +95,17 @@ $(document).ready(function() {
 
     let pizza = new Pizza (pizzaSize, pizzaCrust, pizzaToppings);
     pizza.determinePrice();
+    console.log("Pizza price: " + pizza.price);
     pizzaOrder.addPizza(pizza);
 
+    console.log("Pizza Order Total: " + pizzaOrder.orderTotal);
+    pizzaOrder.calculateOrderTotal();
+    console.log("Pizza Order Total: " + pizzaOrder.orderTotal);
     $("#pizza-count").text(pizzaOrder.pizzas.length);
-
+    $("#pizza-order-cost").text(pizzaOrder.orderTotal);
 
     displayPizzaOrderDetails(pizzaOrder);
-  });
 
+    console.log(pizzaOrder.pizzas)
+  });
 });
