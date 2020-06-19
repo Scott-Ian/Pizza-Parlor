@@ -10,24 +10,19 @@ function Pizza (size, crust, toppings) {
 Pizza.prototype.price = function {
   if (this.crust === "Thin") {
     this.price += 3;
-  }
-  if (this.crust === "Stuffed") {
+  } else if (this.crust === "Stuffed") {
     this.price += 5;
-  }
-  if (this.crust === "Deep Dish") {
+  } else if (this.crust === "Deep Dish") {
     this.price += 8;
   }
 
   if (this.size === "Small") {
     this.price += 3;
-  }
-  if (this.size === "Medium") {
+  } else if (this.size === "Medium") {
     this.price += 5;
-  }
-  if (this.size === "Large") {
+  } else if (this.size === "Large") {
     this.price += 8;
-  }
-  if (this.size === "Family") {
+  } else if (this.size === "Family") {
     this.price += 10;
   }
 

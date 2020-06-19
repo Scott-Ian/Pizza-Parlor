@@ -34,8 +34,8 @@ _{Tell me about the languages and tools you used to create this app. Assume that
 
 | | Behavior | Input | Output | isComplete |
 |----|----|----|----|----|
-| 1.| The program has the ability to store pizza toppings and pizza size in a "pizza object"| Cheese, Small | N/A | _False_|
-| 2.| The program's pizza object has a prototype method to determine pizza cost based upon pizza size, and pizza toppings | Peperoni, Cheese, Large | $12.50 | _False_|
+| 1.| The program has the ability to store pizza toppings and pizza size in a "pizza object"| Cheese, Small | N/A | _True_|
+| 2.| The program's pizza object has a prototype method to determine pizza cost based upon pizza size, and pizza toppings | Peperoni, Cheese, Large | $12.50 | _True_|
 | 3.| The program has a submittable form with which a user can interact and submit their pizza order| Olives, Pineapple, Anchovies, Family-Size | $32 | _False_|
 | 4.| The program allows for the selection of various crust types which affect the final price| Thin-crust Pepperoni, Olives | $15 | _False_|
 | 5.| After Submitting a pizza order, the program will display a list of the ordered pizza's| Cheese Pizza | Cheese Pizza  | _False_|
