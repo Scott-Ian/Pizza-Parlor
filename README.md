@@ -1,34 +1,36 @@
-# _{Application Name}_
+# _Pizza Parlor_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _A website that allows users to place pizza orders, June 19, 2020_
 
-#### By _**{List of contributors}**_
+#### By _**Ian Scott**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This is a web application that allows the user to place an order for pizzas, choosing size, crust type, and toppings. The program generates a list of all pizzas ordered, with a brief description of each (size, crust, number of toppings, price). The program further displays a running total of the number of pizzas ordered, and the total price of the order._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+_Open by downloading:_
+1. Download this repository onto your computer by clicking the "clone or download button"
+2. Double click index.html within your file explorer or GUI to open it in your web browser
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+_Open via Bash/GitBash;_
+1. Clone this repository onto your computer: https://github.com/Scott-Ian/Pizza-Parlor.git
+2. Navigate into the "Pizza-Parlor" directory in Visual Studio Code, or your preferred text editor
+3. Enter the command line prompt "code ." or your text editor's equivalent
+4. Open index.html in Chrome or your preferred browser: "open index.html" or other equivalent
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_There are currently no known bugs_
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_If you have any questions, run into any issues or bugs, or if you would like to contribute to this project, please contact the author via e-mail at: chesnekov@gmail.com._
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_This program utilizes HTML, CSS, Bootstrap v3.3.7, jQuery. This program, being an exercise in Objects and Object prototype methods, uses both extensively as well._
 
 ## Specifications
 
@@ -39,18 +41,10 @@ _{Tell me about the languages and tools you used to create this app. Assume that
 | 3.| The program has a submittable form with which a user can interact and submit their pizza order| Olives, Pineapple, Anchovies, Family-Size | $32 | _True_|
 | 4.| The program allows for the selection of various crust types which affect the final price| Thin-crust Pepperoni, Olives | $15 | _True_|
 | 5.| After Submitting a pizza order, the program will display a list of the ordered pizza's| Cheese Pizza | Cheese Pizza  | _True_|
-| 6.| When the listed pizza is clicked, further details about the pizza order will become available| click Cheese Pizza | Cheese Pizza, Small, Stuffed Crust | _False_|
-| 6.| The pizza order form will have the ability to order multiple pizza's with different toppings| Cheese Pizza, Small, Pepperoni Pizza, Large etc.  | Cheese Pizza, Pepperoni Pizza | _False_|
-| 6.| When placing an order the user will have an option of selecting delivery, and submitting their address. This will incur additional cost| Olive and Pineapple Family Size, Thin-crust pizza, 1234, sample address, NY NY | Delivery: Family Size Pizza: $45.72 | _False_|
-| 6.| Sample Behavior| Input | Output | _False_|
+| 6.| The pizza order form will have the ability to order multiple pizza's with different toppings| Cheese Pizza, Small, Pepperoni Pizza, Large etc.  | Cheese Pizza, Pepperoni Pizza | _True_|
+| 7.| The program will update the user on the number of pizza's ordered, and the order total with each successive submision of the form.| click "Submit" | Your order of: 1 pizza(s) will be $14 | _True_|
 
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
-
-https://choosealicense.com/
-https://en.wikipedia.org/wiki/MIT_License
-https://en.wikipedia.org/wiki/GNU_General_Public_License
-
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2020 **_Ian Scott._** This web project is licensed under the MIT license.
