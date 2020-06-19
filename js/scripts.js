@@ -7,7 +7,7 @@ function Pizza (size, crust, toppings) {
   this.price = 5;
 }
 
-Pizza.prototype.price = function {
+Pizza.prototype.determinePrice = function () {
   if (this.crust === "Thin") {
     this.price += 3;
   } else if (this.crust === "Stuffed") {
@@ -32,7 +32,35 @@ Pizza.prototype.price = function {
 
 }
 
+function displayPizzaPrice (pizza) {
+  $("#pizza-display").show();
+  $("ul#pizza-list").append(pizza.price);
+}
 
-
+function attachContactListeners (pizza) {
+  $("ul#")
+}
 
 // UI Logic
+$(document).ready(function() {
+  let pizza;
+
+  $("form#pizza-form").submit(function (event) {
+    event.preventDefault();
+
+    const pizzaSize = $("#pizza-size").val();
+    const pizzaCrust = $("#pizza-crust").val();
+    const pizzaToppings = [];
+    $("input:checkbox[name='pizza-toppings']:checked").each(function () {
+      pizzaToppings.push($(this).val());
+    })
+
+    console.log(`Pizza Size: ${pizzaSize}\n Pizza Crust: ${pizzaCrust}\n Pizza Toppings: ${pizzaToppings}`);
+
+    pizza = new Pizza (pizzaSize, pizzaCrust, pizzaToppings);
+    $("form#pizza-form").hide();
+    pizza.determinePrice();
+    displayPizzaPrice(pizza);
+  });
+
+});
