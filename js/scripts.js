@@ -33,8 +33,14 @@ Pizza.prototype.determinePrice = function () {
 }
 
 function displayPizzaPrice (pizza) {
-  $("#pizza-display").show();
+  size, crust, toppings
+  $("#size").text(pizza.size);
+  $("#crust").text(pizza.crust);
+  const pizzaToppingsString = pizza.toppings.join(", ");
+  $("#toppings").text(pizzaToppingsString);
   $("#pizza-cost").text(pizza.price);
+
+  $("#pizza-display").show();
 }
 
 function attachContactListeners (pizza) {
