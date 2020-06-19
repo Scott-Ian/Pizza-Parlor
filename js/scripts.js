@@ -44,12 +44,16 @@ function displayPizzaPrice (pizza) {
 }
 
 function attachContactListeners (pizza) {
-  $("ul#")
+  $("ul#pizza-list").on("click", "li", function () {
+    this.append(pizza);
+  console.log("UL has been clicked!")
+  });
 }
 
 // UI Logic
 $(document).ready(function() {
   let pizza;
+  attachContactListeners
 
   $("form#pizza-form").submit(function (event) {
     event.preventDefault();
