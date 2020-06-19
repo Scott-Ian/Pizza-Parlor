@@ -2,7 +2,7 @@
   function PizzaOrder () {
     this.pizzas = [];
     this.currentId = 0;
-    this.address;
+    this.orderTotal;
   }
   
   PizzaOrder.prototype.addPizza = function (pizza) {
@@ -13,6 +13,12 @@
   PizzaOrder.prototype.assignId = function () {
     this.currentId += 1;
     return this.currentId;
+  }
+
+  PizzaOrder.prototype.calculateOrderTotal = function () {
+    this.pizzas.forEach(pizza) {
+      PizzaOrder.orderTotal += this.price;
+    }
   }
 
 // Business logic for Pizza
@@ -66,9 +72,10 @@ function displayPizzaOrderDetails (pizzaOrder) {
   let pizzaList = $("pizza-list");
   let htmlForPizzaInfo = "";
   pizzaOrder.pizzas.forEach(function (pizza) {
-    htmlForPizzaInfo += "li class=" + pizza.id + ">" + pizza.size + " " + pizza.crust +"</li>";
+    htmlForPizzaInfo += "li id=" + pizza.id + ">" + pizza.size + " " + pizza.crust + "toppings: " + pizza.toppings.length + "</li>";
   })
-  pizzaList.html(htmlforPizzaInfo);
+  pizzaList.html(htmlForPizzaInfo);
+  $("#pizza-display").show();
 }
 
 function attachContactListeners (pizza) {
@@ -92,14 +99,15 @@ $(document).ready(function() {
       pizzaToppings.push($(this).val());
       $(this).prop('checked',false);
     })
-    
-
-    console.log(`Pizza Size: ${pizzaSize}\n Pizza Crust: ${pizzaCrust}\n Pizza Toppings: ${pizzaToppings}`);
 
     let pizza = new Pizza (pizzaSize, pizzaCrust, pizzaToppings);
     pizza.determinePrice();
     pizzaOrder.addPizza(pizza);
-    displayPizzaPrice(pizza);
+
+    $("#pizza-count").text(pizzaOrder.pizzas.length);
+
+
+    displayPizzaOrderDetails(pizzaOrder);
   });
 
 });
