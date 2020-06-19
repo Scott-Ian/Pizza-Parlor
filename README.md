@@ -38,7 +38,7 @@ _{Tell me about the languages and tools you used to create this app. Assume that
 | 2.| The program's pizza object has a prototype method to determine pizza cost based upon pizza size, and pizza toppings | Peperoni, Cheese, Large | $12.50 | _True_|
 | 3.| The program has a submittable form with which a user can interact and submit their pizza order| Olives, Pineapple, Anchovies, Family-Size | $32 | _True_|
 | 4.| The program allows for the selection of various crust types which affect the final price| Thin-crust Pepperoni, Olives | $15 | _True_|
-| 5.| After Submitting a pizza order, the program will display a list of the ordered pizza's| Cheese Pizza | Cheese Pizza  | _False_|
+| 5.| After Submitting a pizza order, the program will display a list of the ordered pizza's| Cheese Pizza | Cheese Pizza  | _True_|
 | 6.| When the listed pizza is clicked, further details about the pizza order will become available| click Cheese Pizza | Cheese Pizza, Small, Stuffed Crust | _False_|
 | 6.| The pizza order form will have the ability to order multiple pizza's with different toppings| Cheese Pizza, Small, Pepperoni Pizza, Large etc.  | Cheese Pizza, Pepperoni Pizza | _False_|
 | 6.| When placing an order the user will have an option of selecting delivery, and submitting their address. This will incur additional cost| Olive and Pineapple Family Size, Thin-crust pizza, 1234, sample address, NY NY | Delivery: Family Size Pizza: $45.72 | _False_|

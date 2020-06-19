@@ -1,5 +1,21 @@
-// Business Logic
+// Business Logic for PizzaOrder
+  function PizzaOrder () {
+    this.pizzas = [];
+    this.currentId = 0;
+    this.address;
+  }
+  
+  PizzaOrder.prototype.addPizza = function (pizza) {
+    pizza.id = this.assignId();
+    this.pizzas.push(pizza);
+  }
+  
+  PizzaOrder.prototype.assignId = function () {
+    this.currentId += 1;
+    return this.currentId;
+  }
 
+// Business logic for Pizza
 function Pizza (size, crust, toppings) {
   this.size = size;
   this.crust = crust;
@@ -32,6 +48,9 @@ Pizza.prototype.determinePrice = function () {
 
 }
 
+
+
+// UI Logic
 function displayPizzaPrice (pizza) {
   size, crust, toppings
   $("#size").text(pizza.size);
@@ -50,7 +69,6 @@ function attachContactListeners (pizza) {
   });
 }
 
-// UI Logic
 $(document).ready(function() {
   let pizza;
   attachContactListeners
