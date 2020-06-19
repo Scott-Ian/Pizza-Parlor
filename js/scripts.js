@@ -62,6 +62,15 @@ function displayPizzaPrice (pizza) {
   $("#pizza-display").show();
 }
 
+function displayPizzaOrderDetails (pizzaOrder) {
+  let pizzaList = $("pizza-list");
+  let htmlForPizzaInfo = "";
+  pizzaOrder.pizzas.forEach(function (pizza) {
+    htmlForPizzaInfo += "li class=" + pizza.id + ">" + pizza.size + " " + pizza.crust +"</li>";
+  })
+  pizzaList.html(htmlforPizzaInfo);
+}
+
 function attachContactListeners (pizza) {
   $("ul#pizza-list").on("click", "li", function () {
     this.append(pizza);
@@ -70,7 +79,7 @@ function attachContactListeners (pizza) {
 }
 
 $(document).ready(function() {
-  let pizza;
+  let pizzaOrder = new PizzaOrder ();
   attachContactListeners
 
   $("form#pizza-form").submit(function (event) {
@@ -81,13 +90,15 @@ $(document).ready(function() {
     const pizzaToppings = [];
     $("input:checkbox[name='pizza-toppings']:checked").each(function () {
       pizzaToppings.push($(this).val());
+      $(this).prop('checked',false);
     })
+    
 
     console.log(`Pizza Size: ${pizzaSize}\n Pizza Crust: ${pizzaCrust}\n Pizza Toppings: ${pizzaToppings}`);
 
-    pizza = new Pizza (pizzaSize, pizzaCrust, pizzaToppings);
-    $("form#pizza-form").hide();
+    let pizza = new Pizza (pizzaSize, pizzaCrust, pizzaToppings);
     pizza.determinePrice();
+    pizzaOrder.addPizza(pizza);
     displayPizzaPrice(pizza);
   });
 
