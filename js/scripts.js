@@ -21,7 +21,6 @@
     this.pizzas.forEach(function (pizza) {
       total += pizza.price;
     });
-
     this.orderTotal = total;
   }
 
@@ -55,32 +54,29 @@ Pizza.prototype.determinePrice = function () {
   if (this.toppings.length >=3) {
     this.price += 1.50 * (this.toppings.length -2)
   }
-
 }
-
-
 
 // UI Logic
 function displayPizzaOrderDetails (pizzaOrder) {
-  let pizzaList = $("pizza-list");
+  let pizzaList = $("#pizza-list");
   let htmlForPizzaInfo = "";
   pizzaOrder.pizzas.forEach(function (pizza) {
-    htmlForPizzaInfo += "li id=" + pizza.id + ">" + pizza.size + " " + pizza.crust + "toppings: " + pizza.toppings.length + "</li>";
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.size + ", " + pizza.crust + " crust, " + "toppings: " + pizza.toppings.length + ", cost: $" + pizza.price + "</li>";
   })
   pizzaList.html(htmlForPizzaInfo);
   $("#pizza-display").show();
 }
 
-function attachContactListeners (pizza) {
+function attachContactListeners (pizzaOrder) {
   $("ul#pizza-list").on("click", "li", function () {
-    this.append(pizza);
+    this.append(pizzaOrder.pizzas);
   console.log("UL has been clicked!")
   });
 }
 
 $(document).ready(function() {
   let pizzaOrder = new PizzaOrder ();
-  attachContactListeners
+  attachContactListeners(pizzaOrder);
 
   $("form#pizza-form").submit(function (event) {
     event.preventDefault();

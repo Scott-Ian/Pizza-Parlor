@@ -20,3 +20,7 @@ body {
 body {
   background-image: url("https://vectorgrovepreview.azureedge.net/c/674/c674002.jpg?st=2019-11-06T10%3A03%3A41Z&se=2039-12-31T22%3A00%3A00Z&sp=r&sv=2018-03-28&sr=c&sig=zblTCxEF2g7nMxSIOzivUbXvPyq%2B%2Fz5hxWjVoAbSdWw%3D")
 }
+
+#pizza-count, #pizza-order-cost {
+  font-weight: bold;
+}
