@@ -6,18 +6,11 @@
   }
   
   PizzaOrder.prototype.addPizza = function (pizza) {
-    pizza.id = this.assignId();
     this.pizzas.push(pizza);
-  }
-  
-  PizzaOrder.prototype.assignId = function () {
-    this.currentId += 1;
-    return this.currentId;
   }
 
   PizzaOrder.prototype.calculateOrderTotal = function () {
     let total = 0;
-
     this.pizzas.forEach(function (pizza) {
       total += pizza.price;
     });
@@ -61,7 +54,7 @@ function displayPizzaOrderDetails (pizzaOrder) {
   let pizzaList = $("#pizza-list");
   let htmlForPizzaInfo = "";
   pizzaOrder.pizzas.forEach(function (pizza) {
-    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.size + ", " + pizza.crust + " crust, " + "toppings: " + pizza.toppings.length + ", cost: $" + pizza.price + "</li>";
+    htmlForPizzaInfo += "<li>" + pizza.size + ", " + pizza.crust + " crust, " + "toppings: " + pizza.toppings.length + ", cost: $" + pizza.price + "</li>";
   })
   pizzaList.html(htmlForPizzaInfo);
   $("#pizza-display").show();
